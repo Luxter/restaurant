@@ -7,27 +7,20 @@ import java.io.Serializable;
  * Created by cyranl on 2015-07-09.
  */
 @Entity
-public class OrderItem implements Serializable {
+public class RequestItem implements Serializable {
 
     @Id
     @GeneratedValue
     private long id;
 
-    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
     private double price;
 
-    @Column(nullable = false)
-    @ManyToOne()
-    @JoinColumn(name = "id")
-    private Order order;
-
-    public OrderItem() {
+    public RequestItem() {
     }
 
-    public OrderItem(String name, double price) {
+    public RequestItem(String name, double price) {
         this.name = name;
         this.price = price;
     }
