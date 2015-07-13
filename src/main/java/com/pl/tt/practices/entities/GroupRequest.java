@@ -2,7 +2,7 @@ package com.pl.tt.practices.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Created by cyranl on 2015-07-09.
@@ -11,12 +11,12 @@ import java.util.List;
 public class GroupRequest extends Request {
 
     @OneToMany
-    private List<Request> partialRequests;
+    private Collection<Request> partialRequests;
 
     public GroupRequest() {
     }
 
-    public GroupRequest(List<RequestItem> requestItems, RequestState requestState, List<Request> partialRequests) {
+    public GroupRequest(Collection<RequestItem> requestItems, RequestState requestState, Collection<Request> partialRequests) {
         super(requestItems, requestState);
         this.partialRequests = partialRequests;
     }
@@ -34,11 +34,11 @@ public class GroupRequest extends Request {
         partialRequests.add(partialRequest);
     }
 
-    public List<Request> getPartialRequests() {
+    public Collection<Request> getPartialRequests() {
         return partialRequests;
     }
 
-    public void setPartialRequests(List<Request> partialRequests) {
+    public void setPartialRequests(Collection<Request> partialRequests) {
         this.partialRequests = partialRequests;
     }
 }

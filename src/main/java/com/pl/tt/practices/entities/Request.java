@@ -2,8 +2,8 @@ package com.pl.tt.practices.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by cyranl on 2015-07-09.
@@ -16,7 +16,7 @@ public abstract class Request extends Persistable implements Serializable {
     protected Date requestDate;
 
     @OneToMany()
-    protected List<RequestItem> requestItems;
+    protected Collection<RequestItem> requestItems;
 
     @Enumerated(EnumType.STRING)
     protected RequestState requestState;
@@ -24,7 +24,7 @@ public abstract class Request extends Persistable implements Serializable {
     public Request() {
     }
 
-    public Request(List<RequestItem> requestItems, RequestState requestState) {
+    public Request(Collection<RequestItem> requestItems, RequestState requestState) {
         this.requestItems = requestItems;
         this.requestState = requestState;
     }
@@ -45,11 +45,11 @@ public abstract class Request extends Persistable implements Serializable {
         return requestDate;
     }
 
-    public List<RequestItem> getRequestItems() {
+    public Collection<RequestItem> getRequestItems() {
         return requestItems;
     }
 
-    public void setRequestItems(List<RequestItem> requestItems) {
+    public void setRequestItems(Collection<RequestItem> requestItems) {
         this.requestItems = requestItems;
     }
 

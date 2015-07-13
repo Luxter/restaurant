@@ -1,6 +1,9 @@
 package com.pl.tt.practices.entities;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 /**
  * Created by cyranl on 2015-07-09.
