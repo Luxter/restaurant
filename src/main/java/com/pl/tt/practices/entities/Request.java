@@ -15,7 +15,7 @@ public abstract class Request extends Persistable implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     protected Date requestDate;
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.ALL)
     protected Collection<RequestItem> requestItems;
 
     @Enumerated(EnumType.STRING)

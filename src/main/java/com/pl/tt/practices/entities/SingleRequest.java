@@ -1,7 +1,7 @@
 package com.pl.tt.practices.entities;
 
 import javax.persistence.Entity;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Created by cyranl on 2015-07-09.
@@ -12,7 +12,7 @@ public class SingleRequest extends Request {
     public SingleRequest() {
     }
 
-    public SingleRequest(List<RequestItem> requestItems, RequestState requestState) {
+    public SingleRequest(Collection<RequestItem> requestItems, RequestState requestState) {
         super(requestItems, requestState);
     }
 }
