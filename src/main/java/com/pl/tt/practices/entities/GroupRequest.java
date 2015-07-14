@@ -41,5 +41,16 @@ public class GroupRequest extends Request {
     public void setPartialRequests(Collection<Request> partialRequests) {
         this.partialRequests = partialRequests;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Date:" + requestDate).append("\n");
+        for(Request pariaRequest : partialRequests){
+            sb.append(pariaRequest.toString()).append("\n");
+        }
+        sb.append("Total: " + getTotalPrice()).append("\n");
+        return sb.toString();
+    }
 }
 

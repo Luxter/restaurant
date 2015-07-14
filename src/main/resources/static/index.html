@@ -9,9 +9,15 @@
     <h1>Welcome in my 'RESTaurant'</h1>
     <div ng-controller="restaurantCtrl">
         <div ng-repeat="table in tables">
-            Table: {{table}}<br/>
             Table id: {{table.id}}<br/>
             Table capacity: {{table.maxCapacity}}<br/>
+            Table requests:<br/>
+            <div ng-repeat="tableRequest in table.tableRequests">
+                <div ng-if="tableRequest.requestState !== 'FINISHED'">
+                    {{tableRequest}}
+                    <button ng-click="payRequest(tableRequest)">Pay for request</button>
+                </div>
+            </div>
         </div>
 
         <svgTable/>

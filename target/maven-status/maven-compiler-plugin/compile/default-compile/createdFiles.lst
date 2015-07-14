@@ -1,2 +1,7 @@
+com\pl\tt\practices\repositories\ReceiptService.class
+com\pl\tt\practices\entities\GroupRequest.class
+com\pl\tt\practices\entities\SingleRequest.class
 com\pl\tt\practices\controllers\SmallTableController.class
 com\pl\tt\practices\controllers\InitController.class
+com\pl\tt\practices\repositories\RequestRepository.class
+com\pl\tt\practices\controllers\RequestController.class

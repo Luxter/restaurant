@@ -11,6 +11,13 @@ app.controller('restaurantCtrl', ["$scope", "$http", "$log", function($scope, $h
                 $scope.tables.push(response);
             });
     }
+
+    $scope.payRequest = function(request){
+        $log.log('PrintReceipt function');
+        $http.post("http://localhost:8080/payrequest", request);
+        alert("Successfully paid.")
+        window.location.reload();
+    }
 } ] );
 
 app.directive('svgtable', ["$http", "$log", function($http, $log){
@@ -23,11 +30,12 @@ app.directive('svgtable', ["$http", "$log", function($http, $log){
                 scope.actualTableId = scope.tables[$index].id;
             }
 
-            scope.addRequest = function(){
+            scope.submitSingleRequest = function(){
                 tableRequests = scope.tables[scope.actualTableIndex].tableRequests;
                 newRequest = [{"name": scope.mealName, "price":scope.mealPrice}];
                 tableRequests.push({"type":"singleRequest", "requestItems":newRequest});
                 $http.put("http://localhost:8080/addrequest", scope.tables[scope.actualTableIndex]);
+                window.location.reload();
             }
         }
     }

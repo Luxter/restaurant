@@ -15,4 +15,15 @@ public class SingleRequest extends Request {
     public SingleRequest(Collection<RequestItem> requestItems) {
         super(requestItems);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Date:" + requestDate).append("\n");
+        for(RequestItem item : requestItems){
+            sb.append(item.toString()).append("\n");
+        }
+        sb.append("Total: " + getTotalPrice()).append("\n");
+        return sb.toString();
+    }
 }

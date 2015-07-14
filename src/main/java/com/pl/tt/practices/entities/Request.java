@@ -74,4 +74,6 @@ public abstract class Request extends Persistable implements Serializable {
     public void prePersist(){
         requestDate = new Date();
     }
+
+    public abstract String toString();
 }

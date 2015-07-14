@@ -38,4 +38,9 @@ public class RequestItem implements Serializable {
     public double getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return name + " " + price;
+    }
 }

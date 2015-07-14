@@ -1,8 +1,11 @@
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\RestaurantApplication.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\controllers\InitController.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\entities\Persistable.java
+C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\repositories\RequestRepository.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\repositories\SmallTableRepository.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\entities\SingleRequest.java
+C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\repositories\ReceiptService.java
+C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\controllers\RequestController.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\entities\SmallTable.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\entities\RequestItem.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\entities\Request.java
@@ -10,5 +13,3 @@ C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\ServletInitializer.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\controllers\SmallTableController.java
 C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\entities\RequestState.java
-C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\repositories\GroupRequestRepository.java
-C:\Users\cyranl\Desktop\restaurant\restaurant\src\main\java\com\pl\tt\practices\repositories\SingleRequestRepository.java
