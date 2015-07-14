@@ -5,19 +5,25 @@ var app = angular.module('restaurantApp', []);
 app.controller('restaurantCtrl', ["$scope", "$http", "$log", function($scope, $http, $log){
     $scope.tables = [];
     tableCount = 3;
-    for(var i=0; i<tableCount; i++) {
-        $http.get("http://localhost:8080/gettable?id=" + (i+1))
+
+
+    for (var i = 0; i < tableCount; i++) {
+        $http.get("http://localhost:8080/gettable?id=" + (i + 1))
             .success(function (response) {
                 $scope.tables.push(response);
             });
     }
 
+
     $scope.payRequest = function(request){
-        $http.post("http://localhost:8080/payrequest", request);
-        alert("Successfully paid.")
+        $http.post("http://localhost:8080/payrequest", request)
+            .success(function () {
+                alert("Successfully paid.")
+            });
         window.location.reload();
     }
 } ] );
+
 
 app.controller('tableCtrl', ["$scope", "$http", "$log", function($scope, $http, $log){
     $scope.changePartial = function(tableRequest){
