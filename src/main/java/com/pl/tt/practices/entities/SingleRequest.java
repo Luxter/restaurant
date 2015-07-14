@@ -21,9 +21,9 @@ public class SingleRequest extends Request {
         StringBuilder sb = new StringBuilder();
         sb.append("Date:" + requestDate).append("\n");
         for(RequestItem item : requestItems){
-            sb.append(item.toString()).append("\n");
+            sb.append("\t").append(item.toString()).append("\n");
         }
-        sb.append("Total: " + getTotalPrice()).append("\n");
+        sb.append("\t").append("Total: " + getTotalPrice()).append("\n");
         return sb.toString();
     }
 }

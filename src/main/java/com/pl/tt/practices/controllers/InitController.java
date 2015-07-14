@@ -20,7 +20,7 @@ public class InitController {
     @RequestMapping("/init")
     public void index(){
         SmallTable table1 = new SmallTable(1, new ArrayList<>());
-        SmallTable table2 = new SmallTable(2, new ArrayList<>());
+        SmallTable table2 = new SmallTable(20, new ArrayList<>());
         SmallTable table3 = new SmallTable(3, new ArrayList<>());
         smallTableRepository.save(table1);
         smallTableRepository.save(table2);

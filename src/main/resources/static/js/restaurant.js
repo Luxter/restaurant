@@ -13,9 +13,30 @@ app.controller('restaurantCtrl', ["$scope", "$http", "$log", function($scope, $h
     }
 
     $scope.payRequest = function(request){
-        $log.log('PrintReceipt function');
         $http.post("http://localhost:8080/payrequest", request);
         alert("Successfully paid.")
+        window.location.reload();
+    }
+} ] );
+
+app.controller('tableCtrl', ["$scope", "$http", "$log", function($scope, $http, $log){
+    $scope.changePartial = function(tableRequest){
+        if(tableRequest.partial === undefined){
+            tableRequest.partial = true;
+        }
+    }
+
+    $scope.groupRequests = function(table){
+        tableRequests = table.tableRequests;
+        partialRequests = [];
+        angular.forEach(tableRequests, function(tableRequest, key){
+            if(tableRequest.partial){
+                tableRequest.requestState = "FINISHED";
+                partialRequests.push(tableRequest);
+            }
+        });
+        tableRequests.push({"type":"groupRequest", "partialRequests":partialRequests});
+        $http.put("http://localhost:8080/addrequest", table);
         window.location.reload();
     }
 } ] );

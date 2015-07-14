@@ -45,9 +45,9 @@ public class GroupRequest extends Request {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Date:" + requestDate).append("\n");
-        for(Request pariaRequest : partialRequests){
-            sb.append(pariaRequest.toString()).append("\n");
+        sb.append("Date:" + requestDate).append("\n\n");
+        for(Request parialRequest : partialRequests){
+            sb.append("\t").append(parialRequest.toString()).append("\n");
         }
         sb.append("Total: " + getTotalPrice()).append("\n");
         return sb.toString();
