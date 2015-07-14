@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>Hello AngularJS</title>
+</head>
+
+<body ng-app="restaurantApp">
+  <div class="container">
+    <h1>Welcome in my 'RESTaurant'</h1>
+    <div ng-controller="restaurantCtrl">
+        <div ng-repeat="table in tables">
+            Table: {{table}}<br/>
+            Table id: {{table.id}}<br/>
+            Table capacity: {{table.maxCapacity}}<br/>
+        </div>
+
+        <svgTable/>
+    </div>
+  </div>
+  <script src="js/angular.min.js"></script>
+  <script src="js/restaurant.js"></script>
+</body>
+</html>

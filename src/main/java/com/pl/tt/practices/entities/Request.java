@@ -1,5 +1,8 @@
 package com.pl.tt.practices.entities;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
@@ -10,6 +13,11 @@ import java.util.Date;
  */
 @Entity
 @Inheritance
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = SingleRequest.class, name = "singleRequest"),
+        @JsonSubTypes.Type(value = GroupRequest.class, name = "groupRequest")
+})
 public abstract class Request extends Persistable implements Serializable {
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -22,11 +30,12 @@ public abstract class Request extends Persistable implements Serializable {
     protected RequestState requestState;
 
     public Request() {
+        requestState = RequestState.PLACED;
     }
 
-    public Request(Collection<RequestItem> requestItems, RequestState requestState) {
+    public Request(Collection<RequestItem> requestItems) {
         this.requestItems = requestItems;
-        this.requestState = requestState;
+        this.requestState = RequestState.PLACED;
     }
 
     public double getTotalPrice(){

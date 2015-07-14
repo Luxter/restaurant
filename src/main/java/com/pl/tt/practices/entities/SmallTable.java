@@ -1,9 +1,6 @@
 package com.pl.tt.practices.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 
@@ -19,7 +16,7 @@ public class SmallTable implements Serializable{
 
     private int maxCapacity;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Collection<Request> tableRequests;
 
     public SmallTable() {

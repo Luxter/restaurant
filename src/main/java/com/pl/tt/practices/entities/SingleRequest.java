@@ -12,7 +12,7 @@ public class SingleRequest extends Request {
     public SingleRequest() {
     }
 
-    public SingleRequest(Collection<RequestItem> requestItems, RequestState requestState) {
-        super(requestItems, requestState);
+    public SingleRequest(Collection<RequestItem> requestItems) {
+        super(requestItems);
     }
 }

@@ -16,8 +16,8 @@ public class GroupRequest extends Request {
     public GroupRequest() {
     }
 
-    public GroupRequest(Collection<RequestItem> requestItems, RequestState requestState, Collection<Request> partialRequests) {
-        super(requestItems, requestState);
+    public GroupRequest(Collection<RequestItem> requestItems, Collection<Request> partialRequests) {
+        super(requestItems);
         this.partialRequests = partialRequests;
     }
 

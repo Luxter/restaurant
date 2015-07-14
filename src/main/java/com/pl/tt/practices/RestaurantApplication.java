@@ -9,10 +9,5 @@ public class RestaurantApplication {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(RestaurantApplication.class, args);
-
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        for (String beanName : beanNames) {
-            System.out.println(beanName);
-        }
     }
 }
